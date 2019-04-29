@@ -1,0 +1,370 @@
+/*-------------------------
+	Simple reset
+--------------------------*/
+
+
+*{
+	margin:0;
+	padding:0;
+}
+
+
+/*-------------------------
+	General Styles
+--------------------------*/
+
+
+html{
+	background: #000000;
+}
+
+body{
+	min-height: 600px;
+    padding: 0px 0 50px;
+	font:14px/1.3 'Segoe UI',Arial, sans-serif;
+	box-shadow:0 0 25px rgba(0,0,0,0.3) inset;
+	height:100%;
+}
+
+.background{
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+}
+a, a:visited {
+	text-decoration:none;
+	outline:none;
+	color:#54a6de;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+section, footer{
+	display: block;
+}
+
+
+/*----------------------------
+	Styling the presentation
+-----------------------------*/
+
+.typewriter {
+    font-family: Courier, monospace;
+	display: inline-block;
+}
+
+.typewriter-text {
+    display: inline-block;
+  	overflow: hidden;
+  	letter-spacing: 2px;
+ 	animation: typing 5s steps(30, end), blink .75s step-end infinite;
+    white-space: nowrap;
+    font-size: 30px;
+    font-weight: 700;
+    border-right: 4px solid orange;
+    box-sizing: border-box;
+	left: 290px;
+    line-height: 1.6;
+    top: 220px;
+    white-space: nowrap;
+	color: #fff;
+}
+
+@keyframes typing {
+    from { 
+        width: 0% 
+    }
+    to { 
+        width: 100% 
+    }
+}
+
+@keyframes blink {
+    from, to { 
+        border-color: transparent 
+    }
+    50% { 
+        border-color: orange; 
+    }
+}
+
+#impress:not(.impress-not-supported) .step{
+	opacity:0.4;
+}
+
+#impress .step{
+	width:700px;
+	height: 600px;
+	position:relative;
+	margin:0 auto;
+	
+	-moz-transition:1s opacity;
+	-webkit-transition:1s opacity;
+	transition:1s opacity;
+}
+
+#impress .step.active{
+	opacity:1;
+}
+
+#impress h2{
+	font: normal 44px/1.5 'PT Sans Narrow', sans-serif;
+	color:#fff;
+	position:absolute;
+
+}
+.text{
+	font: normal 44px/1.5 'PT Sans Narrow', sans-serif;
+	color:#fff;
+	position:absolute;
+
+}
+#intro .text{
+	text-align: center;
+    width: 100%;
+}
+#formacad .text{
+	left: 0;
+	top: 135px;
+	width: 400px;
+}
+#expprof.text{
+	left: 0;
+	top: 370px;
+	width: 100%;
+	text-align:center;
+}
+
+.text::before,.text::after{
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.text::before{
+  color: #ff00c1;
+  animation: glitch-effect 3s infinite;
+}
+
+.text::after{
+  color: #3498db;
+  animation: glitch-effect 2s infinite;
+}
+
+@keyframes glitch-effect {
+  0%{
+    left: -2px;
+    top: -2px;
+  }
+  25%{
+    left: 2px;
+    top: 0px;
+  }
+  50%{
+    left: -1px;
+    top: 2px;
+  }
+  75%{
+    left: 1px;
+    top: -1px;
+  }
+  100%{
+    left: 0px;
+    top: -2px;
+  }
+}
+
+#impress p{
+	font: normal 18px/1.3 'Open Sans', sans-serif;
+	color:#ffffff;
+	position:absolute;
+	z-index:10;
+	animation: type 3s steps(22);
+	overflow:hidden;
+	white-space: nowrap;
+	border-right: 4px solid black;
+	width:22ch;
+	
+}
+@keyframes type {
+	0%{
+		width:0ch;
+	}
+	100%{
+		width:22ch;
+	}
+	}
+
+
+#impress img{
+	position:absolute;
+	z-index:1;
+}
+
+.arrow{
+	width:32px;
+	height:54px;
+	background:url('../img/arrows.png') no-repeat;
+	position:fixed;
+	top:50%;
+	margin-top:-27px;
+	cursor:pointer;
+	text-indent:-9999px;
+	overflow:hidden;
+	opacity:0.8;
+	border:none !important;
+	text-decoration:none !important;
+	
+	-moz-transition:0.2s opacity;
+	-webkit-transition:0.2s opacity;
+	transition:0.2s opacity;
+}
+
+.arrow:hover{
+	opacity:1;
+}
+
+#arrowLeft{
+	left:45px;
+}
+
+#arrowRight{
+	right:45px;
+	background-position:top right;
+}
+
+
+#impress.impress-not-supported + .arrow,
+#impress.impress-not-supported + .arrow + .arrow{
+	display:none;
+}
+
+
+/*----------------------------
+	Slide 1 - Intro
+-----------------------------*/
+
+
+#impress #intro{
+	width: 500px;
+}
+
+#intro h2{
+	text-align: center;
+    width: 100%;
+}
+
+#intro p{
+	font-size: 22px;
+    left: 290px;
+    line-height: 1.6;
+    top: 220px;
+    white-space: nowrap;
+}
+#intro img{
+	top: 120px;
+}
+
+
+/*----------------------------
+	Slide 2 - formacad
+-----------------------------*/
+
+
+#impress #formacad{
+	width: 675px;
+}
+
+#formacad h2{
+	left: 0;
+	top: 135px;
+	width: 400px;
+}
+
+#formacad p{
+	left: 50px;
+    text-align: justify;
+    text-indent: 16px;
+    top: 225px;
+    width: 365px;
+}
+
+#formacad img{
+	right: 0;
+    top: 30px;
+}
+
+
+/*----------------------------
+	Slide 3 - expprof
+-----------------------------*/
+
+
+#impress #expprof{
+	width: 560px;
+}
+
+#expprof h2{
+	left: 0;
+	top: 370px;
+	width: 100%;
+	text-align:center;
+}
+
+#expprof p{
+	left:50%;
+	margin-left:-245px;
+    text-align: left;
+    top: 460px;
+    width: 490px;
+}
+
+#expprof img{
+	right: 0;
+    top: 50px;
+}
+
+
+
+/*----------------------------
+	Footer
+-----------------------------*/
+
+
+footer{
+	background-color: #111111;
+	bottom: 0;
+	box-shadow: 0 -1px 2px #111111;
+	height: 45px;
+	left: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 100000;
+}
+
+footer h2{
+	color: #EEEEEE;
+	font-size: 14px;
+	font-weight: normal;
+	left: 50%;
+	margin-left: -400px;
+	padding: 13px 0 0;
+	position: absolute;
+	width: 540px;
+}
+
+footer h2 i{
+	font-style:normal;
+	color:#888;
+}
+
+
